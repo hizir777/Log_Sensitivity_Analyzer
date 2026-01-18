@@ -2,9 +2,6 @@
 
 Log Sensitivity Analyzer: Comprehensive R&D Study 
 
- 
-Figure: Core functions of a Data Loss Prevention (DLP) solution – monitoring, filtering, reporting, and analysis are key capabilities[1][2]. 
-
 1. Research Scope & Objectives 
 
 Beyond Regex – Advanced Secret Detection Techniques 
