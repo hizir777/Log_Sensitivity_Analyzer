@@ -95,8 +95,8 @@ Log_Sensitivity_Analyzer/
 │   └── ui/             # Streamlit Dashboard kodları (app.py)
 ├── tests/              # 41 adet otomatik test senaryosu ve Canary Logs
 ├── researchs/          # AI destekli teknik araştırma dökümanları
-└── specs/              # Proje metadata ve konfigürasyon (project_info.json)
-
+├── specs/              # Proje metadata ve konfigürasyon
+└── docs/               # Proje sunumu ve videolu uygulama 
 ```
 
 ---
