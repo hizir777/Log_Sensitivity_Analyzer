@@ -204,6 +204,8 @@ def main():
         st.session_state.scan_result = None
     if 'findings_df' not in st.session_state:
         st.session_state.findings_df = None
+    if 'last_uploaded_file' not in st.session_state:
+        st.session_state.last_uploaded_file = None
     
     # =========================================================================
     # FILE UPLOAD SECTION
@@ -217,6 +219,14 @@ def main():
         help="Supports .log and .txt files. Processing uses line-by-line streaming for constant memory usage.",
         key="file_uploader"
     )
+
+    # Clear previous results when a new file is uploaded
+    if uploaded_file is not None:
+        current_file_id = f"{uploaded_file.name}_{uploaded_file.size}"
+        if st.session_state.last_uploaded_file != current_file_id:
+            st.session_state.scan_result = None
+            st.session_state.findings_df = None
+            st.session_state.last_uploaded_file = current_file_id
     
     if uploaded_file is not None:
         st.info(f"📄 **File**: {uploaded_file.name} ({uploaded_file.size / 1024:.2f} KB)")
