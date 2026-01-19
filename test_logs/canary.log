@@ -1,0 +1,14 @@
+2026-01-19 04:36:15 INFO User 10000000146 logged in successfully
+2026-01-19 04:36:20 ERROR Payment failed for card 4111111111111111 - declined
+2026-01-19 04:36:25 WARN IBAN transfer initiated: TR330006100519786457841326
+2026-01-19 04:36:30 DEBUG Contact info: user@example.com, phone: 05551234567
+2026-01-19 04:36:35 ERROR API_KEY=sk_live_abc123def456ghi789jkl012mno345pqr678
+2026-01-19 04:36:40 INFO Processing card 5500000000000004 for transaction
+2026-01-19 04:36:45 WARN GitHub token detected: ghp_abc123def456ghi789jklmno012pqr345stuvwx
+2026-01-19 04:36:50 DEBUG AWS credentials: AKIA1234567890ABCDEF
+2026-01-19 04:36:55 INFO Customer TC: 11111111110 verified
+2026-01-19 04:37:00 ERROR Invalid email format: notanemail
+2026-01-19 04:37:05 INFO Random number 12345678901 in log (not a valid TCKN)
+2026-01-19 04:37:10 DEBUG Support: support@company.com, mobile: +905559876543
+2026-01-19 04:37:15 WARN Card format test: 4111-1111-1111-1111
+2026-01-19 04:37:20 INFO Amex card: 378282246310005 processed

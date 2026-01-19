@@ -1,0 +1,196 @@
+{
+    "test_suite_version": "1.0.0",
+    "description": "Canary log entries for automated testing and validation",
+    "valid_cases": [
+        {
+            "id": "valid_tckn_1",
+            "log_line": "2026-01-19 05:16:00 INFO User 10000000146 logged in successfully",
+            "expected_matches": [
+                {
+                    "type": "tc_kimlik",
+                    "value": "10000000146",
+                    "verified": true,
+                    "risk_weight": 1.0
+                }
+            ]
+        },
+        {
+            "id": "valid_tckn_2",
+            "log_line": "2026-01-19 05:16:05 DEBUG Customer TC: 11111111110 verified",
+            "expected_matches": [
+                {
+                    "type": "tc_kimlik",
+                    "value": "11111111110",
+                    "verified": true,
+                    "risk_weight": 1.0
+                }
+            ]
+        },
+        {
+            "id": "valid_visa",
+            "log_line": "2026-01-19 05:16:10 ERROR Payment failed for card 4111111111111111",
+            "expected_matches": [
+                {
+                    "type": "visa",
+                    "value": "4111111111111111",
+                    "verified": true,
+                    "risk_weight": 1.0
+                }
+            ]
+        },
+        {
+            "id": "valid_mastercard",
+            "log_line": "2026-01-19 05:16:15 INFO Processing card 5500000000000004 for transaction",
+            "expected_matches": [
+                {
+                    "type": "mastercard",
+                    "value": "5500000000000004",
+                    "verified": true,
+                    "risk_weight": 1.0
+                }
+            ]
+        },
+        {
+            "id": "valid_amex",
+            "log_line": "2026-01-19 05:16:20 DEBUG Amex card 378282246310005 processed",
+            "expected_matches": [
+                {
+                    "type": "amex",
+                    "value": "378282246310005",
+                    "verified": true,
+                    "risk_weight": 1.0
+                }
+            ]
+        },
+        {
+            "id": "valid_iban",
+            "log_line": "2026-01-19 05:16:25 WARN IBAN transfer: TR330006100519786457841326",
+            "expected_matches": [
+                {
+                    "type": "iban",
+                    "value": "TR330006100519786457841326",
+                    "verified": true,
+                    "risk_weight": 0.7
+                }
+            ]
+        },
+        {
+            "id": "valid_email",
+            "log_line": "2026-01-19 05:16:30 INFO Contact: user@example.com",
+            "expected_matches": [
+                {
+                    "type": "email",
+                    "value": "user@example.com",
+                    "verified": true,
+                    "risk_weight": 0.2
+                }
+            ]
+        },
+        {
+            "id": "valid_phone",
+            "log_line": "2026-01-19 05:16:35 DEBUG Phone: 05551234567",
+            "expected_matches": [
+                {
+                    "type": "phone",
+                    "value": "05551234567",
+                    "verified": true,
+                    "risk_weight": 0.5
+                }
+            ]
+        },
+        {
+            "id": "valid_github_token",
+            "log_line": "2026-01-19 05:16:40 ERROR GitHub token detected: ghp_abc123def456ghi789jklmno012pqr345stuvwx",
+            "expected_matches": [
+                {
+                    "type": "github_token",
+                    "value": "ghp_abc123def456ghi789jklmno012pqr345stuvwx",
+                    "verified": true,
+                    "risk_weight": 0.95
+                }
+            ]
+        },
+        {
+            "id": "valid_aws_key",
+            "log_line": "2026-01-19 05:16:45 WARN AWS credentials: AKIA1234567890ABCDEF",
+            "expected_matches": [
+                {
+                    "type": "aws_key",
+                    "value": "AKIA1234567890ABCDEF",
+                    "verified": true,
+                    "risk_weight": 0.95
+                }
+            ]
+        }
+    ],
+    "false_positive_cases": [
+        {
+            "id": "invalid_tckn_checksum",
+            "log_line": "2026-01-19 05:17:00 INFO Random number 12345678901 in log (invalid checksum)",
+            "expected_matches": [
+                {
+                    "type": "tc_kimlik",
+                    "value": "12345678901",
+                    "verified": false,
+                    "risk_weight": 1.0,
+                    "note": "Pattern matches but checksum fails"
+                }
+            ]
+        },
+        {
+            "id": "invalid_credit_card",
+            "log_line": "2026-01-19 05:17:05 DEBUG Test card 1234567890123456 (invalid Luhn)",
+            "expected_matches": [
+                {
+                    "type": "credit_card",
+                    "value": "1234567890123456",
+                    "verified": false,
+                    "risk_weight": 1.0,
+                    "note": "Pattern matches but Luhn fails"
+                }
+            ]
+        },
+        {
+            "id": "tckn_first_digit_zero",
+            "log_line": "2026-01-19 05:17:10 WARN Invalid TC: 01234567890 (first digit zero)",
+            "expected_matches": [],
+            "note": "Should not match pattern (first digit must be 1-9)"
+        }
+    ],
+    "edge_cases": [
+        {
+            "id": "empty_line",
+            "log_line": "",
+            "expected_matches": [],
+            "note": "Empty line should not generate matches"
+        },
+        {
+            "id": "no_pii",
+            "log_line": "2026-01-19 05:17:20 INFO Application started successfully",
+            "expected_matches": [],
+            "note": "Clean log line with no PII"
+        },
+        {
+            "id": "multiple_pii_types",
+            "log_line": "2026-01-19 05:17:25 ERROR User 10000000146 payment 4111111111111111 contact user@example.com",
+            "expected_matches": [
+                {
+                    "type": "tc_kimlik",
+                    "value": "10000000146",
+                    "verified": true
+                },
+                {
+                    "type": "visa",
+                    "value": "4111111111111111",
+                    "verified": true
+                },
+                {
+                    "type": "email",
+                    "value": "user@example.com",
+                    "verified": true
+                }
+            ],
+            "note": "Multiple different PII types in single line"
+        }
+    ]
+}
