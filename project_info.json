@@ -1,0 +1,49 @@
+{
+    "project": {
+        "name": "Log Sensitivity Analyzer",
+        "version": "1.0.0",
+        "description": "Forensic-grade DLP tool for detecting PII and secrets in log files",
+        "author": "Senior Security Engineering Team",
+        "compliance": "KVKK/GDPR",
+        "license": "Proprietary"
+    },
+    "requirements": {
+        "python_version": "3.10+",
+        "required_modules": [
+            "re",
+            "json",
+            "sys",
+            "os",
+            "pathlib",
+            "dataclasses",
+            "datetime",
+            "argparse",
+            "math"
+        ],
+        "optional_modules": [
+            "rich"
+        ]
+    },
+    "components": {
+        "validators": {
+            "tckn_validator": "Turkish ID validation using Modulo 11",
+            "luhn_validator": "Credit card validation using Luhn algorithm"
+        },
+        "core": {
+            "patterns": "ReDoS-safe regex patterns and entropy calculator",
+            "engine": "Main scanning and orchestration engine"
+        }
+    },
+    "configuration": {
+        "entropy_threshold": 4.5,
+        "risk_weights": {
+            "tc_kimlik": 1.0,
+            "credit_card": 1.0,
+            "api_secret": 0.95,
+            "iban": 0.7,
+            "phone": 0.5,
+            "email": 0.2
+        },
+        "max_risk_score": 10.0
+    }
+}
