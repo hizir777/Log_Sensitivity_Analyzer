@@ -1,49 +1,19 @@
 {
-    "project": {
-        "name": "Log Sensitivity Analyzer",
-        "version": "1.0.0",
-        "description": "Forensic-grade DLP tool for detecting PII and secrets in log files",
-        "author": "Senior Security Engineering Team",
-        "compliance": "KVKK/GDPR",
-        "license": "Proprietary"
-    },
-    "requirements": {
-        "python_version": "3.10+",
-        "required_modules": [
-            "re",
-            "json",
-            "sys",
-            "os",
-            "pathlib",
-            "dataclasses",
-            "datetime",
-            "argparse",
-            "math"
-        ],
-        "optional_modules": [
-            "rich"
-        ]
-    },
-    "components": {
-        "validators": {
-            "tckn_validator": "Turkish ID validation using Modulo 11",
-            "luhn_validator": "Credit card validation using Luhn algorithm"
-        },
-        "core": {
-            "patterns": "ReDoS-safe regex patterns and entropy calculator",
-            "engine": "Main scanning and orchestration engine"
-        }
-    },
-    "configuration": {
-        "entropy_threshold": 4.5,
-        "risk_weights": {
-            "tc_kimlik": 1.0,
-            "credit_card": 1.0,
-            "api_secret": 0.95,
-            "iban": 0.7,
-            "phone": 0.5,
-            "email": 0.2
-        },
-        "max_risk_score": 10.0
-    }
+  "projectName": "Log Sensitivity Analyzer",
+  "category": "Cybersecurity / Data Leakage Prevention (DLP)",
+  "author": "Can E.",
+  "version": "1.0.0",
+  "description": "Forensic-grade DLP tool for KVKK/GDPR compliance that detects and validates PII/Secrets in logs using mathematical algorithms and Shannon entropy analysis.",
+  "features": [
+    "Mathematical validation (Modulo 11 for TCKN, Luhn for Credit Cards) ",
+    "Shannon entropy analysis for secret detection (threshold > 4.5 bits)",
+    "Memory-efficient line-by-line stream processing (~15MB constant RAM usage)",
+    "Interactive Streamlit dashboard with risk scoring and visual analytics",
+    "Automated environment self-checks and comprehensive test suite (41+ tests)",
+    "Forensic masking of sensitive data (e.g., 10*********6) for compliance"
+  ],
+  "requirements": {
+    "os": "Unix-based (Kali Linux, Ubuntu 22.04+ recommended)",
+    "language": "Python 3.10+"
+  }
 }
