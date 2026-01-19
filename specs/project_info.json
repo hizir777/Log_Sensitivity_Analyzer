@@ -1,0 +1,18 @@
+{
+  "projectName": "Log Sensitivity Analyzer (LSA)",
+  "category": "Cybersecurity / DevSecOps / Forensic",
+  "author": "Can Ekizoğlu",
+  "version": "1.0.0",
+  "description": "A forensic-grade DLP audit tool specialized in detecting PII (TC Kimlik, Credit Cards) and Secrets in high-velocity log streams, fully compliant with KVKK Article 12 and GDPR.",
+  "features": [
+    "Algorithmic PII Validation (Modulo-11 for TC Kimlik, Luhn for CC)",
+    "Secret Scanning & Shannon Entropy Analysis for API Keys",
+    "Automated Risk Scoring based on Leak Density (0-10 Scale)",
+    "Unix I/O Architecture supporting Pipes and FD Stream Management",
+    "Self-Check Ability for internal validation of detection engines"
+  ],
+  "requirements": {
+    "os": "Ubuntu 22.04 (LTS)",
+    "language": "Python 3.10 (Asyncio Core)"
+  }
+}
