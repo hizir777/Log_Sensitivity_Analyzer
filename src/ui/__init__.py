@@ -1,1 +1,1 @@
-# This file makes the ui directory a Python package
+"""UI package for Streamlit dashboard."""
