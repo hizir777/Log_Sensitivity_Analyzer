@@ -83,6 +83,17 @@ python src/core/engine.py --scan app.log --json > report.json
 
 ---
 
+# 🎥 Log Sensitivity Analyzer Kullanımı - Video
+
+Bu video, log dosyaları içerisindeki hassas verileri (PII) ve gizli anahtarları (Secrets) tespit etmek için geliştirdiğim **Log Sensitivity Analyzer** projesinin canlı kullanımını ve teknik yeteneklerini sergilemektedir.
+
+### 🔗 Video Bağlantısı
+
+> **https://www.youtube.com/watch?v=8u3q9V8rxJ4**
+
+
+---
+
 ## 🏗️ Proje Mimarisi
 
 Sistem, profesyonel standartlara uygun modüler bir hiyerarşiye sahiptir:
