@@ -33,7 +33,7 @@ Projeyi izole ve güvenli bir şekilde çalıştırmak için aşağıdaki adıml
 
 ```bash
 # 1. Projeyi klonlayın
-git clone https://github.com/kullaniciadi/Log_Sensitivity_Analyzer.git
+git clone https://github.com/hizir777/Log_Sensitivity_Analyzer.git
 cd Log_Sensitivity_Analyzer
 
 # 2. Sanal ortamı (venv) kurun ve aktif edin
@@ -44,7 +44,7 @@ source venv/bin/activate  # Windows için: venv\Scripts\activate
 pip install -r requirements.txt
 
 # 4. Otomasyon kurulumunu ve sistem kontrolünü tamamlayın
-chmod +x setup.sh && ./setup.sh
+chmod +x setup.sh run_tests.sh
 
 ```
 

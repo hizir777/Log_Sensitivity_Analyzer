@@ -24,20 +24,16 @@ Projeye katkı sağlamaya başlamadan önce yerel ortamınızı hazırlayın:
 
 Projenin kurumsal ve okunabilir kalması için şu kurallara sıkı sıkıya bağlıyız:
 
-* 
-**PEP 8 Uyumluluğu:** Tüm Python kodları PEP 8 standartlarına uygun olmalıdır.
+* **PEP 8 Uyumluluğu:** Tüm Python kodları PEP 8 standartlarına uygun olmalıdır.
 
 
-* 
-**Dokümantasyon:** Tüm fonksiyon ve sınıflar Google/Sphinx tarzı docstring içermelidir.
+* **Dokümantasyon:** Tüm fonksiyon ve sınıflar Google/Sphinx tarzı docstring içermelidir.
 
 
-* 
-**Modüler Yapı:** Yeni eklenen doğrulayıcılar `src/validators/` altına, desenler ise `src/core/patterns.py` dosyasına eklenmelidir.
+* **Modüler Yapı:** Yeni eklenen doğrulayıcılar `src/validators/` altına, desenler ise `src/core/patterns.py` dosyasına eklenmelidir.
 
 
-* 
-**Hata Yönetimi:** Tüm modüller, Unix I/O standartlarına uygun olarak başarı durumunda `0`, hata durumunda `1` exit kodu döndürmelidir.
+* **Hata Yönetimi:** Tüm modüller, Unix I/O standartlarına uygun olarak başarı durumunda `0`, hata durumunda `1` exit kodu döndürmelidir.
 
 
 
@@ -56,8 +52,7 @@ Bu proje, yüksek doğruluk oranını korumak için kapsamlı bir test süreci k
 3. Testleri koşturmak için `./run_tests.sh` script'ini kullanın.
 
 
-4. 
-**Canary Logs:** Yeni tespit desenleri ekleniyorsa, `canary_logs.json` dosyasına hem geçerli hem de geçersiz (false-positive) test vakaları eklenmelidir.
+4. **Canary Logs:** Yeni tespit desenleri ekleniyorsa, `canary_logs.json` dosyasına hem geçerli hem de geçersiz (false-positive) test vakaları eklenmelidir.
 
 
 
@@ -67,12 +62,10 @@ Bu proje, yüksek doğruluk oranını korumak için kapsamlı bir test süreci k
 
 Eğer projede bir güvenlik açığı bulursanız, lütfen bunu **Issues** üzerinden değil, doğrudan projenin ana geliştiricisine e-posta yoluyla bildirin. Siber güvenlik araçları geliştirdiğimiz için "Sorumlu Açıklama" (Responsible Disclosure) ilkesine önem veriyoruz.
 
-* 
-**Regex Güvenliği:** Yeni eklenen desenler ReDoS (Regular Expression Denial of Service) saldırılarına karşı optimize edilmelidir.
+* **Regex Güvenliği:** Yeni eklenen desenler ReDoS (Regular Expression Denial of Service) saldırılarına karşı optimize edilmelidir.
 
 
-* 
-**Veri Gizliliği:** Geliştirme sırasında gerçek PII (Kişisel Veri) kullanılmamalı, sadece sentetik/sahte veriler kullanılmalıdır.
+* **Veri Gizliliği:** Geliştirme sırasında gerçek PII (Kişisel Veri) kullanılmamalı, sadece sentetik/sahte veriler kullanılmalıdır.
 
 
 
@@ -82,8 +75,6 @@ Eğer projede bir güvenlik açığı bulursanız, lütfen bunu **Issues** üzer
 
 1. Anlamlı bir branch ismi kullanın (örn: `feat/new-iban-validator` veya `fix/tckn-checksum`).
 2. PR açıklamasında yaptığınız değişikliğin KVKK/GDPR "Bütünlük" veya "Hesap Verilebilirlik" ilkelerine nasıl katkı sağladığını belirtin.
-
-
 3. Kod incelemesi (Code Review) sürecinde istenen değişiklikleri uygulayın.
 4. Onay alındıktan sonra branch'iniz `main` ile birleştirilecektir.
 
