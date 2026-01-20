@@ -1,4 +1,14 @@
 
+
+<div align="center">
+  <img src="https://img.shields.io/badge/languages-2-blueviolet?style=flat-square" alt="Language Count">
+  <img src="https://img.shields.io/badge/top_language-Python-blue?style=flat-square" alt="Top Language">
+  <img src="https://img.shields.io/badge/license-MIT-yellow?style=flat-square" alt="License">
+  <img src="https://img.shields.io/badge/Status-Active-green?style=flat-square" alt="Status">
+  <img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=flat-square" alt="Contributions">
+</div>
+
+---
 ---
 
 # 🔒 Log Sensitivity Analyzer - Forensic-grade DLP Engine
@@ -137,3 +147,7 @@ Proje, kendi kendini denetleme ve raporlama yeteneğine sahiptir:
 | **Hesap Verilebilirlik (GDPR Madde 5)** | Zaman damgalı JSON raporları ve denetlenebilir audit trail.|
 
 ---
+
+## 👨‍💻 Author
+
+| **Can Ekizoğlu - 2420191008 : kodlama ve araştırma** |
