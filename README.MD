@@ -148,6 +148,6 @@ Proje, kendi kendini denetleme ve raporlama yeteneğine sahiptir:
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Yazar
 
 | **Can Ekizoğlu - 2420191008 : kodlama ve araştırma** |
